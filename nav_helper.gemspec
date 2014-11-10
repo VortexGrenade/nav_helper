@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.version       = NavHelper::VERSION
   spec.authors       = ['Okhlopkov Anatoly']
   spec.email         = ['ohlopkov0211@gmail.com']
-  spec.summary       = ''
-  spec.description   = ''
-  spec.homepage      = ''
+  spec.summary       = 'Helper for building nav links.'
+  spec.description   = 'Helper for building nav links.'
+  spec.homepage      = 'https://github.com/VortexGrenade/nav_helper.git'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
