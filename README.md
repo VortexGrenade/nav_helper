@@ -1,4 +1,4 @@
-# NavHelper
+# NavHelper [![Build Status](https://travis-ci.org/VortexGrenade/nav_helper.svg?branch=v0.1.0)](https://travis-ci.org/VortexGrenade/nav_helper)
 
 Helper for building nav links.
 
