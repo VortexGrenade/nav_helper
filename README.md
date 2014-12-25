@@ -11,11 +11,11 @@ By default, helper generates link, wrapped with `<li>` and sets class "active", 
 </ul>
 ```
 
-Also, you can customize wrapper tag and navigation root path:
+Also, you can customize wrapper, active class and navigation root path:
 ```html
 <div class="nav">
-  <%= nav_item('Posts', admin_posts_path, tag: :div, root: admin_path) %>
-  <%= nav_item('Users', admin_users_path, tag: :div, root: admin_path) %>
+  <%= nav_item('Posts', admin_posts_path, active_class: 'activated' wrapper:{tag: :div, class: list-item}, root: admin_path) %>
+  <%= nav_item('Users', admin_users_path, active_class: 'activated' wrapper:{tag: :div, class: list-item}, root: admin_path) %>
 </div>
 ```
 
