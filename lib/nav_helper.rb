@@ -17,12 +17,16 @@ module NavigationHelper
     path, options = title, path if block_given?
 
     options ||= {}
-    options.reverse_merge!(tag: :li, root: nil)
+    root = options.delete(:root)
+    active_class = options.delete(:active_class) || 'active'
+    wrapper = options.delete(:wrapper) || {}
+    tag = wrapper.delete(:tag) || :li
 
-    tag = options.delete(:tag)
-    is_active = current_path?(path, options.delete(:root))
+    if current_path?(path, root)
+      wrapper[:class] = [ wrapper[:class], active_class ].compact.join(' ')
+    end
 
-    content_tag(tag, class: (:active if is_active)) do
+    content_tag(tag, wrapper) do
       if block_given?
         link_to(path, options, &blk)
       else

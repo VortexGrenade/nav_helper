@@ -41,6 +41,18 @@ describe NavigationHelper, type: [:helper] do
       expect(helper.nav_item('Bar', '/admin', root: '/admin')).to eq(%{<li><a href="/admin">Bar</a></li>})
     end
 
+    it 'allows custom active class' do
+      helper.request.path = '/admin/foo/bar'
+
+      expect(helper.nav_item('Foo', '/admin/foo/bar', root: '/admin', active_class: 'bro')).to eq(%{<li class="bro"><a href="/admin/foo/bar">Foo</a></li>})
+    end
+
+    it 'allows custom wrapper' do
+      helper.request.path = '/admin/foo/bar'
+
+      expect(helper.nav_item('Foo', '/admin/fo', root: '/admin', wrapper: {tag: :div, class: 'bro'})).to eq(%{<div class="bro"><a href="/admin/fo">Foo</a></div>})
+    end
+
     it 'generates nav item with block' do
       expect(helper.nav_item('/fo') do
         'FOO'
